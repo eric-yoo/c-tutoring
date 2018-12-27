@@ -9,13 +9,10 @@ int main(){
   scanf("%d", &a5);
   scanf("%d", &a6);
   scanf("%d", &a7);
-	// int result=a1+a2;
-	// result=result+(a1+a2+a3)/3;
-	// result=result*a4;
-	// int x=result-(a5/a6);
-	// x=x%a7;
-	// printf("%d\n",a7);
-  int sum;
-  sum = a1+ a7;
-  printf("%d\n",sum);
+	int result=a1+a2;
+	result=result+(a1+a2+a3)/3;
+	result=result*a4;
+	int x=result-(a5+a6);
+	x=x%a7;
+	printf("%d\n",a7);
 }

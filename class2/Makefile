@@ -1,11 +1,10 @@
-fibonacci:
-	gcc fibonacci.c -o output.o
-	./output.o
-
 operation:
-	gcc operation.c -o output.o
-	./output.o
+	gcc operation.c -o output.out
 
-variable:
-	gcc variable.c -o output.o
-	./output.o
+test:
+	gcc test.c -o output.out
+
+input:
+	cat ../data/test1.txt | ./output.out
+	cat ../data/test2.txt | ./output.out
+	cat ../data/test3.txt | ./output.out
