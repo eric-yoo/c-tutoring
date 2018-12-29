@@ -1,4 +1,3 @@
-
 homework:
 	gcc homework.c -o output.out
 

@@ -5,8 +5,8 @@ string:
 	gcc string.c -o output.out
 	./output.out
 
-max:
-	gcc max.c -o output.out
+test:
+	gcc test.c -o output.out
 
 input:
 	cat ../data/test1.txt | ./output.out
