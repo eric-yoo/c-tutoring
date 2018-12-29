@@ -1,16 +1,23 @@
 #include <stdio.h>
 int main(){
-  int len;
-  scanf("%d", &len);
-  char s1[len]; char s2[len]; char s3[len];
-  scanf("%s", s1);
-  scanf("%s", s2);
+  int n;
+  scanf("%d", &n);
+  int x;
+  scanf("%d", &x);
+  int first;
   int i;
-  for (i=0; i<len/2; i++){
-    s3[i]=s1[i];
+  for (i=0; i<n; i++){
+    int current;
+    scanf("%d", &current);
+    if(i==0){
+      first = current;
+    }
+    if(current>x){
+      printf("%d\n", current);
+      break;
+    }
   }
-  for (; i<len; i++){
-    s3[i]=s2[i];
+  if(i==n){
+    printf("%d\n",first);
   }
-  printf("%s\n",s3);
 }
