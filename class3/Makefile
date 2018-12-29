@@ -2,8 +2,8 @@ fibonacci:
 	gcc fibonacci.c -o output.out
 	./output.out
 
-average:
-	gcc average.c -o output.out
+practice:
+	gcc practice.c -o output.out
 
 test:
 	gcc test.c -o output.out
