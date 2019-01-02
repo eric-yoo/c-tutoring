@@ -9,23 +9,9 @@ int main(){
       if(x==0){
         printf("start game\n");
       }
-
-      else if(x==1){
-        printf("a\n");
+      else if(x>=1&&x<=5){
+        printf("%c\n",'a'+x-1);
       }
-      else if(x==2){
-        printf("b\n");
-      }
-      else if(x==3){
-        printf("c\n");
-      }
-      else if(x==4){
-        printf("d\n");
-      }
-      else if(x==5){
-        printf("e\n");
-      }
-
       else if(x==n){
         printf("end game\n");
         break;
