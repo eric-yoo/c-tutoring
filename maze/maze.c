@@ -1,8 +1,3 @@
-/* Maze generator in C.
- * Joe Wingbermuehle
- * 19990805
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -12,11 +7,10 @@ void ShowMaze(const char *maze, int width, int height) {
    int x, y;
    for(y = 0; y < height; y++) {
       for(x = 0; x < width; x++) {
-         switch(maze[y * width + x]) {
-         case 1:  printf("[]");  break;
-         case 2:  printf(". ");  break;
-         default: printf("  ");  break;
-         }
+        int flag = maze[y * width + x];
+        if (flag==1) {printf("[]");}
+        else if (flag==2) {printf(". ");}
+        else {printf("  ");}
       }
       printf("\n");
    }
@@ -34,12 +28,11 @@ void CarveMaze(char *maze, int width, int height, int x, int y) {
    count = 0;
    while(count < 4) {
       dx = 0; dy = 0;
-      switch(dir) {
-      case 0:  dx = 1;  break;
-      case 1:  dy = 1;  break;
-      case 2:  dx = -1; break;
-      default: dy = -1; break;
-      }
+      if (dir==0){dx=1;}
+      else if(dir==1){dy=1;}
+      else if(dir==2){dx=-1;}
+      else {dy=-1;}
+
       x1 = x + dx;
       y1 = y + dy;
       x2 = x1 + dx;
@@ -167,6 +160,7 @@ int main(int argc,char *argv[]) {
    /* Generate and display the maze. */
    GenerateMaze(maze, width, height);
    ShowMaze(maze, width, height);
+   printf("\n****Solution****\n");
 
    /* Solve the maze if requested. */
    if(argc == 4) {
