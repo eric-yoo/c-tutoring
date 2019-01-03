@@ -99,10 +99,10 @@ void SolveMaze(char *maze, int width, int height) {
    while(x != width - 2 || y != height - 2) {
       dx = 0; dy = 0;
       switch(dir) {
-      case 0:  dx = 1;  break;
-      case 1:  dy = 1;  break;
-      case 2:  dx = -1; break;
-      default: dy = -1; break;
+        case 0:  dx = 1;  break;
+        case 1:  dy = 1;  break;
+        case 2:  dx = -1; break;
+        default: dy = -1; break;
       }
       if(   (forward  && maze[(y + dy) * width + (x + dx)] == 0)
          || (!forward && maze[(y + dy) * width + (x + dx)] == 2)) {
