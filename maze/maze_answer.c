@@ -96,10 +96,7 @@ void SolveMaze(char *maze, int width, int height) {
    count = 0;
    x = 1;
    y = 1;
-
-   // TODO: implement code
-
-   /* while(x != width - 2 || y != height - 2) {
+   while(x != width - 2 || y != height - 2) {
       dx = 0; dy = 0;
       if (dir==0){
         dx=1;
@@ -113,9 +110,23 @@ void SolveMaze(char *maze, int width, int height) {
       else{
         dy=-1;
       }
-
+      if(   (forward  && maze[(y + dy) * width + (x + dx)] == 0)
+         || (!forward && maze[(y + dy) * width + (x + dx)] == 2)) {
+         maze[y * width + x] = forward ? 2 : 3;
+         x += dx;
+         y += dy;
+         forward = 1;
+         count = 0;
+         dir = 0;
+      } else {
+         dir = (dir + 1) % 4;
+         count += 1;
+         if(count > 3) {
+            forward = 0;
+            count = 0;
+         }
+      }
    }
-   */
 
    /* Replace the entry and exit. */
    maze[(height - 2) * width + (width - 2)] = 2;
